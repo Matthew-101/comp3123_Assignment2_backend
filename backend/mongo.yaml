@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/assignment1
+      - JWT_SECRET=your_jwt_secret
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
